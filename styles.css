@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #FFF4E3;
+  background-color: #FAFAFA;
   color: #EE00FF;
   margin: 0;
   padding: 20px;
@@ -9,7 +9,7 @@ body {
 .contenedor-principal {
   max-width: 650px;
   margin: 0 auto;
-  background: #FFF4E3;
+  background: #FAFAFA;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.5);
@@ -49,12 +49,12 @@ body {
 
 .btn-principal {
   background-color: #EE00FF;
-  color: #fff;
+  color: #FAFAFA;
 }
 
 .btn-primario {
-  background-color: #2EFF00;
-  color: #121212;
+  background-color: #2DD318;
+  color: #FAFAFA;
 }
 
 .btn-secundario {
@@ -64,7 +64,7 @@ body {
 }
 
 .btn-terciario {
-  background-color: #333;
+  background-color: #fafafa;
   color: #ff00ff;
   border: 1px solid #ff00ff;
 }
@@ -74,8 +74,8 @@ body {
 }
 
 .btn-secundario:hover, .btn-terciario:hover {
-  background-color: #ff00ff;
-  color: #fff;
+  background-color: #ee00ff;
+  color: #fafafa;
 }
 
 .separador {
@@ -92,7 +92,7 @@ body {
 .campo-grupo label {
   display: block;
   margin-bottom: 6px;
-  color: #ff00ff;
+  color: #ee00ff;
   font-weight: bold;
 }
 
@@ -101,14 +101,14 @@ body {
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #444;
-  background-color: #FFF4E3;
-  color: #fff;
+  background-color: #Fafafa;
+  color: #625A5A;
   font-size: 0.95rem;
 }
 
 .caja-respuesta {
-  background-color: #FFF4E3;
-  border-left: 4px solid #00ffcc;
+  background-color: #fafafa;
+  border-left: 4px solid #ee00ff;
   padding: 12px;
   border-radius: 4px;
   white-space: pre-wrap;
