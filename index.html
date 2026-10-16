@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devocional Bíblico</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <!-- Primera Interacción Fija -->
+    <h1 class="titulo-principal">Devocional Bíblico</h1>
+    <p class="pregunta">¿Qué quieres hacer?</p>
+    
+    <div class="botones-inicio">
+      <button class="btn-principal" onclick="mostrarSeccion('agregar')">1) Agregar</button>
+      <button class="btn-principal" onclick="mostrarSeccion('practicar')">2) Practicar</button>
+    </div>
+
+    <hr class="separador">
+
+    <!-- SECCIÓN 1: AGREGAR -->
+    <div id="seccion-agregar" class="seccion oculto">
+      <h2>Nuevo Registro</h2>
+      <form id="form-agregar" onsubmit="guardarRegistro(event)">
+        <div class="campo-grupo">
+          <label for="select-mood">Mood:</label>
+          <select id="select-mood" required>
+            <option value="">-- Selecciona un mood --</option>
+          </select>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="input-fuente">Fuente:</label>
+          <input type="text" id="input-fuente" placeholder="Ej. Juan 3:16" required>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="textarea-contenido">Contenido:</label>
+          <textarea id="textarea-contenido" rows="5" placeholder="Escribe muchísimo aquí..." required></textarea>
+        </div>
+
+        <div class="botones-accion">
+          <button type="button" class="btn-secundario" onclick="limpiarAgregar()">Borrar todo</button>
+          <button type="submit" class="btn-primario">Agregar a Sheets</button>
+        </div>
+      </form>
+      <p id="mensaje-estado" class="mensaje"></p>
+    </div>
+
+    <!-- SECCIÓN 2: PRACTICAR -->
+    <div id="seccion-practicar" class="seccion oculto">
+      <h2>Práctica Bíblica</h2>
+      <div class="botones-inicio">
+        <button class="btn-secundario" onclick="mostrarPractica('orden-biblia')">1) Orden Biblia</button>
+        <button class="btn-secundario" onclick="mostrarPractica('versiculos')">2) Versículos aprendidos</button>
+      </div>
+
+      <!-- Sub-sección: Orden Biblia -->
+      <div id="practica-orden" class="subseccion oculto">
+        <div class="botones-inicio">
+          <button class="btn-terciario" onclick="cargarTestamento('antiguotestamento')">Antiguo Testamento</button>
+          <button class="btn-terciario" onclick="cargarTestamento('nuevotestamento')">Nuevo Testamento</button>
+        </div>
+
+        <div id="form-orden-container" class="oculto">
+          <h3 id="titulo-testamento">Testamento</h3>
+          <div class="campo-grupo">
+            <label for="select-grupo">Grupo:</label>
+            <select id="select-grupo">
+              <option value="">-- Selecciona un grupo --</option>
+            </select>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="input-respuesta-usuario">Tu respuesta:</label>
+            <textarea id="input-respuesta-usuario" rows="3" placeholder="Escribe tu respuesta aquí..."></textarea>
+          </div>
+
+          <button type="button" class="btn-primario" onclick="verificarOrdenBiblia()">Enter</button>
+
+          <div id="resultado-orden" class="campo-grupo oculto">
+            <label>Respuesta Correcta / Contenido:</label>
+            <div id="texto-respuesta-correcta" class="caja-respuesta"></div>
+          </div>
+
+          <button type="button" class="btn-secundario" onclick="limpiarOrdenBiblia()">Limpiar todo</button>
+        </div>
+      </div>
+
+      <!-- Sub-sección: Versículos Aprendidos -->
+      <div id="practica-versiculos" class="subseccion oculto">
+        <h3>Versículos Aprendidos</h3>
+        <div class="campo-grupo">
+          <label for="select-mood-practica">Mood:</label>
+          <select id="select-mood-practica" onchange="filtrarFuentesPorMood()">
+            <option value="">-- Selecciona un mood --</option>
+          </select>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="select-fuente-practica">Fuente:</label>
+          <select id="select-fuente-practica">
+            <option value="">-- Selecciona una fuente --</option>
+          </select>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="textarea-contenido-practica">Contenido / Notas:</label>
+          <textarea id="textarea-contenido-practica" rows="4" placeholder="Escribe o repasa..."></textarea>
+        </div>
+
+        <button type="button" class="btn-primario" onclick="verificarVersiculoAprendido()">Enter</button>
+
+        <div id="resultado-versiculo" class="campo-grupo oculto">
+          <label>Respuesta / Contenido asociado:</label>
+          <div id="texto-respuesta-versiculo" class="caja-respuesta"></div>
+        </div>
+
+        <button type="button" class="btn-secundario" onclick="limpiarVersiculosAprendidos()">Limpiar todo</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

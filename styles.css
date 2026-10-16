@@ -1,0 +1,135 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FFF4E3;
+  color: #EE00FF;
+  margin: 0;
+  padding: 20px;
+}
+
+.contenedor-principal {
+  max-width: 650px;
+  margin: 0 auto;
+  background: #FFF4E3;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.titulo-principal {
+  color: #EE00FF;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.pregunta {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.botones-inicio, .botones-accion {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-principal, .btn-primario, .btn-secundario, .btn-terciario {
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: 0.3s;
+  border: none;
+}
+
+.btn-principal {
+  background-color: #EE00FF;
+  color: #fff;
+}
+
+.btn-primario {
+  background-color: #2EFF00;
+  color: #121212;
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: #ff00ff;
+  border: 1px solid #ff00ff;
+}
+
+.btn-terciario {
+  background-color: #333;
+  color: #ff00ff;
+  border: 1px solid #ff00ff;
+}
+
+.btn-principal:hover, .btn-primario:hover {
+  opacity: 0.85;
+}
+
+.btn-secundario:hover, .btn-terciario:hover {
+  background-color: #ff00ff;
+  color: #fff;
+}
+
+.separador {
+  border: 0;
+  height: 1px;
+  background: #333;
+  margin: 25px 0;
+}
+
+.campo-grupo {
+  margin-bottom: 15px;
+}
+
+.campo-grupo label {
+  display: block;
+  margin-bottom: 6px;
+  color: #ff00ff;
+  font-weight: bold;
+}
+
+.campo-grupo select, .campo-grupo input, .campo-grupo textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #FFF4E3;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.caja-respuesta {
+  background-color: #FFF4E3;
+  border-left: 4px solid #00ffcc;
+  padding: 12px;
+  border-radius: 4px;
+  white-space: pre-wrap;
+}
+
+.oculto {
+  display: none;
+}
+
+.seccion, .subseccion {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.mensaje {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #00ffcc;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
